@@ -1,0 +1,17 @@
+Development Environment:
+
+Install Node.js and npm if not already installed.
+
+
+Clone the Repository:
+
+git clone git@github.com:Exynos93/PeerLend.git
+
+Install Project Dependencies:
+cd PeerLend
+npm install
+
+
+Set up Docker for a consistent environment:
+
+docker-compose up --build
