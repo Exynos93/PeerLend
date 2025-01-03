@@ -1,0 +1,50 @@
+PeerLend/
+├── contracts/
+│   ├── core/
+│   │   ├── LendingPool.sol
+│   │   ├── Loan.sol
+│   ├── utils/
+│   │   ├── Oracle.sol
+│   │   ├── AccessControl.sol
+│   ├── tokens/
+│   │   ├── Token.sol
+│   │   └── StableCoin.sol
+│   └── interfaces/
+│       ├── ILendingPool.sol
+│       └── IOracle.sol
+├── migrations/
+│   ├── 1_deploy_tokens.js
+│   ├── 2_deploy_oracles.js
+│   └── 3_deploy_core.js
+├── test/
+│   ├── core/
+│   │   ├── LendingPool.test.ts
+│   │   └── Loan.test.ts
+│   └── utils/
+│       └── Oracle.test.ts
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Borrow.tsx
+│   │   │   ├── Lend.tsx
+│   │   │   └── Dashboard.tsx
+│   │   ├── hooks/
+│   │   │   └── useContract.ts
+│   │   ├── services/
+│   │   │   └── blockchain.ts
+│   │   ├── App.tsx
+│   │   └── index.tsx
+│   └── styles/
+│       └── style.css
+├── subgraph/
+│   ├── schema.graphql
+│   └── mappings/
+│       └── mapping.ts
+├── scripts/
+│   └── deploy.ts
+├── hardhat.config.ts
+├── package.json
+├── tsconfig.json
+└── README.md
