@@ -19,3 +19,29 @@ Docker for consistent development environments
 Graph Protocol for indexing and querying blockchain events
 Chainlink for decentralized oracles
 IPFS for decentralized storage of loan agreements
+
+#Instructions
+1. Clone the Repository:
+
+git clone git@github.com:yourusername/PeerLend.git
+cd PeerLend
+
+2. Install Dependencies:
+npm install
+
+3. Run Docker Containers:
+docker-compose up --build
+
+4. Deploy Contracts:
+- Configure your hardhat.config.ts for your network settings.
+- Run npx hardhat deploy --network <network-name> to deploy contracts.
+
+5. Start the Frontend:
+npm run start
+
+6. Interact with the DApp:
+- Connect your wallet (e.g., MetaMask) to the correct network.
+- Navigate through the UI to perform actions like depositing, lending, borrowing, and participating in governance.
+
+7. Explore Analytics:
+Check out the analytics dashboard for insights into the platform's performance, risk metrics, and user activity.
