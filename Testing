@@ -1,0 +1,36 @@
+//Use Hardhat for TypeScript testing with comprehensive test
+
+import { expect } from "chai";
+import { ethers } from "hardhat";
+import { LendingPool, Token, Oracle, RiskAssessment } from "../../typechain";
+
+describe("LendingPool", () => {
+  let lendingPool: LendingPool;
+  let token: Token;
+  let oracle: Oracle;
+  let riskAssessment: RiskAssessment;
+
+  beforeEach(async () => {
+    const Token = await ethers.getContractFactory("Token");
+    token = await Token.deploy();
+
+    const Oracle = await ethers.getContractFactory("Oracle");
+    oracle = await Oracle.deploy();
+
+    const RiskAssessment = await ethers.getContractFactory("RiskAssessment");
+    riskAssessment = await RiskAssessment.deploy();
+
+    const LendingPool = await ethers.getContractFactory("LendingPool");
+    lendingPool = await LendingPool.deploy(oracle.address, riskAssessment.address, token.address);
+  });
+
+  it("Should allow deposit of tokens", async () => {
+    const [owner] = await ethers.getSigners();
+    await token.approve(lendingPool.address, ethers.utils.parseEther("1"));
+    await lendingPool.deposit(token.address, ethers.utils.parseEther("1"));
+    const balance = await lendingPool.userBalances(owner.address, token.address);
+    expect(balance).to.equal(ethers.utils.parseEther("1"));
+  });
+
+  // Add more complex tests for borrowing, repayment, interest calculation, etc.
+});
