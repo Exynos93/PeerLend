@@ -1,4 +1,4 @@
-//Use Hardhat for TypeScript testing with comprehensive test
+// Use Hardhat for TypeScript testing with comprehensive test
 
 import { expect } from "chai";
 import { ethers } from "hardhat";
